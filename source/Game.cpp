@@ -21,7 +21,7 @@ Game::Game()
 	EMObj = new EntityManager(RendererObj, CameraObj, InputObj, LevelObj);
 
 	//Create audio manager
-	AudioObj = new Audio;
+	AudioObj = new Audio();
 
 }
 

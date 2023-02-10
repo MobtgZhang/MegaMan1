@@ -48,9 +48,8 @@ namespace NSRenderer
 
 	void Sprite::SetSprite(std::string filename)
 	{
-		SDL_FreeSurface(m_pbitmapSurface);
-		SDL_DestroyTexture(m_pbitmapTexture);
 
+		
 		//Create the bitmap surface
 		m_pbitmapSurface = SDL_LoadBMP(filename.c_str()); //loads bitmap from file into a member variable
 
@@ -78,6 +77,8 @@ namespace NSRenderer
 				printf("%s\n", SDL_GetError());
 			}
 		}
+		SDL_FreeSurface(m_pbitmapSurface);
+		SDL_DestroyTexture(m_pbitmapTexture);
 	}
 
 	void Sprite::Draw(SDL_Renderer* renderer, float CameraX, float CameraY)
